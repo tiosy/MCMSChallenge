@@ -7,6 +7,7 @@
 //
 
 #import "ViewController.h"
+#import "MagicalCreature.h"
 
 @interface ViewController ()
 
@@ -17,11 +18,17 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
+
+    MagicalCreature *creature = [[MagicalCreature alloc] initWithName:@"Doxy"];
+
+    MagicalCreature *creature1 = [[MagicalCreature alloc] initWithName:@"Griffin"];
+
+    MagicalCreature *creature2 = [[MagicalCreature alloc] initWithName:@"Griffin"];
+
+
+
+
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
 
 @end
