@@ -15,6 +15,7 @@
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (weak, nonatomic) IBOutlet UITextField *textFieldCreature;
+@property (weak, nonatomic) IBOutlet UITextField *textFieldDetail;
 
 @end
 
@@ -24,11 +25,14 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
 
-    MagicalCreature *creature = [[MagicalCreature alloc] initWithName:@"Doxy"];
+    UIImage *image1 = [UIImage imageNamed:@"doxy.png"];
+    MagicalCreature *creature = [[MagicalCreature alloc] initWithName:@"Doxy" andDetail:@"Doxy is small fairy-like creature covered with black hair" andImage:image1];
 
-    MagicalCreature *creature1 = [[MagicalCreature alloc] initWithName:@"Griffin"];
+    UIImage *image2 = [UIImage imageNamed:@"griffin.png"];
+    MagicalCreature *creature1 = [[MagicalCreature alloc] initWithName:@"Griffin" andDetail:@"The Griffin has head of a giant eagle and tail of a lion" andImage: image2];
 
-    MagicalCreature *creature2 = [[MagicalCreature alloc] initWithName:@"Sphinx"];
+    UIImage *image3 = [UIImage imageNamed:@"sphinx.png"];
+    MagicalCreature *creature2 = [[MagicalCreature alloc] initWithName:@"Sphinx" andDetail:@"The Sphinx has a head of human, and the body of lion" andImage:image3];
 
     self.creatures = [NSMutableArray arrayWithObjects:creature, creature1, creature2, nil];
 
@@ -37,9 +41,12 @@
 
 - (IBAction)addButton:(id)sender {
 
-    MagicalCreature *newCreature = [[MagicalCreature alloc] initWithName:self.textFieldCreature.text];
+    MagicalCreature *newCreature = [[MagicalCreature alloc] initWithName:self.textFieldCreature.text andDetail:self.textFieldDetail.text andImage:nil];
     [self.creatures addObject: newCreature];
+
+    //clear after input
     self.textFieldCreature.text=@"";
+    self.textFieldDetail.text=@"";
     [self.textFieldCreature resignFirstResponder];
 
     [self.tableView reloadData];
@@ -63,6 +70,7 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell"];
     MagicalCreature *magicalCreature = [self.creatures objectAtIndex:indexPath.row];
     cell.textLabel.text = magicalCreature.name;
+    cell.detailTextLabel.text = magicalCreature.detail;
     return cell;
 
 }
