@@ -34,15 +34,8 @@
 
 
     //
-    //
-    [self.accessories addObject:@"paws"];
-    [self.accessories addObject:@"yellow tail"];
-    [self.accessories addObject:@"shining wings"];
-    [self.accessories addObject:@"lion tails"];
-    [self.accessories addObject:@"hind legs"];
-    [self.accessories addObject:@"brown tuft"];
-    [self.accessories addObject:@"venomous teeth"];
 
+    self.accessories = [NSMutableArray arrayWithObjects:@"paws", @"yellow tail", @"shining wings", @"lion tails",@"hind legs",@"hind legs",@"brown tuft",@"venomous teeth",nil];
 
 
     
@@ -58,12 +51,23 @@
 
     } else if ([sender.title isEqualToString:@"Done"])
     {
+        if (![self.textFiledEdit.text isEqualToString:@""]) {
+            self.creatureName.text = self.textFiledEdit.text;
+
+        }
+        [self.textFiledEdit resignFirstResponder];
         sender.title =  @"Edit";
         self.textFiledEdit.hidden = YES;
 
     }
 }
 
+- (IBAction)textFieldCreature:(id)sender {
+
+//    if (![self.textFiledEdit.text isEqualToString:@""]) {
+//        self.creatureName.text = self.textFiledEdit.text;
+//    }
+}
 
 #pragma mark - UITableViewDelegate, UITableViewDataSource Protocols
 
@@ -83,6 +87,17 @@
     
 }
 
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
 
+    if(cell.accessoryType == UITableViewCellAccessoryNone){
+        cell.accessoryType = UITableViewCellAccessoryCheckmark;
+    } else{
+        cell.accessoryType = UITableViewCellAccessoryNone;
+    }
+
+
+}
 
 @end

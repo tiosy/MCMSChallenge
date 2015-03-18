@@ -10,6 +10,7 @@
 #import "MagicalCreature.h"
 
 #import "CreatureViewController.h"
+#import "BattleViewController.h"
 
 @interface ViewController () <UITableViewDelegate, UITableViewDataSource>
 
@@ -80,14 +81,54 @@
 
 -(void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    CreatureViewController *creatureVC = [segue destinationViewController];
-    NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
+
+    if ([segue.identifier isEqualToString:@"CreatureSegue"]) {
+        CreatureViewController *creatureVC = [segue destinationViewController];
+        NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
+        creatureVC.creature = [self.creatures objectAtIndex:indexPath.row];
+
+    }
+
+    if ([segue.identifier isEqualToString:@"testS"]) {
 
 
-    creatureVC.creature = [self.creatures objectAtIndex:indexPath.row];
+                BattleViewController *battleVC = [segue destinationViewController];
+        
+        
+                battleVC.WinningCreature = [self winnerOfBattle];
+        
+        
+                NSString *str =battleVC.WinningCreature.name;
+        
+
+
+    }
+//
+//    } else if ([segue.identifier isEqualToString:@"BattleSegue"]) {
+//       // BattleViewController *battleVC = [segue destinationViewController];
+//
+//
+//      //  battleVC.WinningCreature = [self winnerOfBattle];
+//
+//
+//        //NSString *str =battleVC.WinningCreature.name;
+//
+//    }
+
+
 
 }
 
+-(MagicalCreature *) winnerOfBattle {
+
+    //Assume winner...
+    UIImage *image2 = [UIImage imageNamed:@"griffin.png"];
+    MagicalCreature *creature = [[MagicalCreature alloc] initWithName:@"Griffin" andDetail:@"The Griffin has head of a giant eagle and tail of a lion" andImage: image2];
+
+    return creature;
+
+
+}
 
 
 

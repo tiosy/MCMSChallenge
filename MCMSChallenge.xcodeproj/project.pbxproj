@@ -19,6 +19,8 @@
 		6EC8DABD1AB92B35001F6E5A /* doxy.png in Resources */ = {isa = PBXBuildFile; fileRef = 6EC8DABC1AB92B35001F6E5A /* doxy.png */; };
 		6EC8DABF1AB92B3B001F6E5A /* griffin.png in Resources */ = {isa = PBXBuildFile; fileRef = 6EC8DABE1AB92B3B001F6E5A /* griffin.png */; };
 		6EC8DAC11AB92B41001F6E5A /* sphinx.png in Resources */ = {isa = PBXBuildFile; fileRef = 6EC8DAC01AB92B41001F6E5A /* sphinx.png */; };
+		6EC8DAC41AB950C1001F6E5A /* BattleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EC8DAC31AB950C1001F6E5A /* BattleViewController.m */; };
+		6EC8DAC71AB9D354001F6E5A /* testViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EC8DAC61AB9D354001F6E5A /* testViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,6 +54,10 @@
 		6EC8DABC1AB92B35001F6E5A /* doxy.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = doxy.png; sourceTree = "<group>"; };
 		6EC8DABE1AB92B3B001F6E5A /* griffin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = griffin.png; sourceTree = "<group>"; };
 		6EC8DAC01AB92B41001F6E5A /* sphinx.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sphinx.png; sourceTree = "<group>"; };
+		6EC8DAC21AB950C1001F6E5A /* BattleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BattleViewController.h; sourceTree = "<group>"; };
+		6EC8DAC31AB950C1001F6E5A /* BattleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BattleViewController.m; sourceTree = "<group>"; };
+		6EC8DAC51AB9D354001F6E5A /* testViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = testViewController.h; sourceTree = "<group>"; };
+		6EC8DAC61AB9D354001F6E5A /* testViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = testViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +105,10 @@
 				6EC8DA921AB8E44E001F6E5A /* AppDelegate.m */,
 				6EC8DA941AB8E44E001F6E5A /* ViewController.h */,
 				6EC8DA951AB8E44E001F6E5A /* ViewController.m */,
+				6EC8DAC51AB9D354001F6E5A /* testViewController.h */,
+				6EC8DAC61AB9D354001F6E5A /* testViewController.m */,
+				6EC8DAC21AB950C1001F6E5A /* BattleViewController.h */,
+				6EC8DAC31AB950C1001F6E5A /* BattleViewController.m */,
 				6EC8DA971AB8E44E001F6E5A /* Main.storyboard */,
 				6EC8DAB91AB90A39001F6E5A /* CreatureViewController.h */,
 				6EC8DABA1AB90A39001F6E5A /* CreatureViewController.m */,
@@ -243,8 +253,10 @@
 			files = (
 				6EC8DA961AB8E44E001F6E5A /* ViewController.m in Sources */,
 				6EC8DAB81AB8E781001F6E5A /* MagicalCreature.m in Sources */,
+				6EC8DAC41AB950C1001F6E5A /* BattleViewController.m in Sources */,
 				6EC8DA931AB8E44E001F6E5A /* AppDelegate.m in Sources */,
 				6EC8DABB1AB90A39001F6E5A /* CreatureViewController.m in Sources */,
+				6EC8DAC71AB9D354001F6E5A /* testViewController.m in Sources */,
 				6EC8DA901AB8E44E001F6E5A /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
