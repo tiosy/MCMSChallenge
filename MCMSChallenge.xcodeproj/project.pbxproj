@@ -15,6 +15,7 @@
 		6EC8DA9E1AB8E44E001F6E5A /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6EC8DA9C1AB8E44E001F6E5A /* LaunchScreen.xib */; };
 		6EC8DAAA1AB8E44E001F6E5A /* MCMSChallengeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EC8DAA91AB8E44E001F6E5A /* MCMSChallengeTests.m */; };
 		6EC8DAB81AB8E781001F6E5A /* MagicalCreature.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EC8DAB71AB8E781001F6E5A /* MagicalCreature.m */; };
+		6EC8DABB1AB90A39001F6E5A /* CreatureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EC8DABA1AB90A39001F6E5A /* CreatureViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,6 +44,8 @@
 		6EC8DAA91AB8E44E001F6E5A /* MCMSChallengeTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MCMSChallengeTests.m; sourceTree = "<group>"; };
 		6EC8DAB61AB8E781001F6E5A /* MagicalCreature.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MagicalCreature.h; sourceTree = "<group>"; };
 		6EC8DAB71AB8E781001F6E5A /* MagicalCreature.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MagicalCreature.m; sourceTree = "<group>"; };
+		6EC8DAB91AB90A39001F6E5A /* CreatureViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CreatureViewController.h; sourceTree = "<group>"; };
+		6EC8DABA1AB90A39001F6E5A /* CreatureViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CreatureViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,6 +94,8 @@
 				6EC8DA941AB8E44E001F6E5A /* ViewController.h */,
 				6EC8DA951AB8E44E001F6E5A /* ViewController.m */,
 				6EC8DA971AB8E44E001F6E5A /* Main.storyboard */,
+				6EC8DAB91AB90A39001F6E5A /* CreatureViewController.h */,
+				6EC8DABA1AB90A39001F6E5A /* CreatureViewController.m */,
 				6EC8DA9A1AB8E44E001F6E5A /* Images.xcassets */,
 				6EC8DA9C1AB8E44E001F6E5A /* LaunchScreen.xib */,
 				6EC8DA8D1AB8E44E001F6E5A /* Supporting Files */,
@@ -227,6 +232,7 @@
 				6EC8DA961AB8E44E001F6E5A /* ViewController.m in Sources */,
 				6EC8DAB81AB8E781001F6E5A /* MagicalCreature.m in Sources */,
 				6EC8DA931AB8E44E001F6E5A /* AppDelegate.m in Sources */,
+				6EC8DABB1AB90A39001F6E5A /* CreatureViewController.m in Sources */,
 				6EC8DA901AB8E44E001F6E5A /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

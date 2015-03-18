@@ -9,9 +9,12 @@
 #import "ViewController.h"
 #import "MagicalCreature.h"
 
+#import "CreatureViewController.h"
+
 @interface ViewController () <UITableViewDelegate, UITableViewDataSource>
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
+@property (weak, nonatomic) IBOutlet UITextField *textFieldCreature;
 
 @end
 
@@ -28,6 +31,20 @@
     MagicalCreature *creature2 = [[MagicalCreature alloc] initWithName:@"Sphinx"];
 
     self.creatures = [NSMutableArray arrayWithObjects:creature, creature1, creature2, nil];
+
+}
+
+
+- (IBAction)addButton:(id)sender {
+
+    MagicalCreature *newCreature = [[MagicalCreature alloc] initWithName:self.textFieldCreature.text];
+    [self.creatures addObject: newCreature];
+    self.textFieldCreature.text=@"";
+    [self.textFieldCreature resignFirstResponder];
+
+    [self.tableView reloadData];
+
+
 
 }
 
@@ -49,5 +66,23 @@
     return cell;
 
 }
+
+
+#pragma mark - segue
+
+-(void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    CreatureViewController *creatureVC = [segue destinationViewController];
+    NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
+
+
+    creatureVC.creature = [self.creatures objectAtIndex:indexPath.row];
+
+}
+
+
+
+
+
 
 @end

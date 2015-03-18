@@ -17,8 +17,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="u2K-z9-aPd">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="u2K-z9-aPd">
+                                <rect key="frame" x="0.0" y="200" width="600" height="600"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" textLabel="T0G-Jp-YWi" detailTextLabel="BRM-Te-jlR" style="IBUITableViewCellStyleSubtitle" id="08w-4v-2y4">
@@ -40,6 +40,9 @@
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="pEg-im-LAW" kind="show" id="vcw-HF-n9l"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
@@ -47,23 +50,82 @@
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="b9H-yF-1hW"/>
                                 </connections>
                             </tableView>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Y1J-SK-2ry">
+                                <rect key="frame" x="43" y="96" width="443" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oLr-IW-agV">
+                                <rect key="frame" x="516" y="96" width="59" height="30"/>
+                                <state key="normal" title="Add">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="addButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Kjr-ev-nFn"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="u2K-z9-aPd" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" id="bpo-vc-zL4"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="u2K-z9-aPd" secondAttribute="bottom" id="bqL-Fr-KUH"/>
-                            <constraint firstItem="u2K-z9-aPd" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-16" id="gKE-qM-uCr"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="u2K-z9-aPd" secondAttribute="trailing" constant="-16" id="xlX-hZ-4bq"/>
+                            <constraint firstItem="oLr-IW-agV" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="32" id="4KT-Qw-F5n"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="oLr-IW-agV" secondAttribute="trailing" constant="9" id="6sE-1x-FCd"/>
+                            <constraint firstItem="Y1J-SK-2ry" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="27" id="Xto-gP-CAX"/>
+                            <constraint firstItem="Y1J-SK-2ry" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="32" id="f2U-FA-JUj"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Y1J-SK-2ry" secondAttribute="trailing" constant="98" id="fVx-hH-eHf"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Nsn-fR-PBe"/>
                     <connections>
                         <outlet property="tableView" destination="u2K-z9-aPd" id="A1S-H2-V9F"/>
+                        <outlet property="textFieldCreature" destination="Y1J-SK-2ry" id="jit-tg-sbS"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1582" y="320"/>
+            <point key="canvasLocation" x="1266" y="285"/>
+        </scene>
+        <!--Creature View Controller-->
+        <scene sceneID="hhA-dn-yX9">
+            <objects>
+                <viewController id="pEg-im-LAW" customClass="CreatureViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="NMX-RN-L3U"/>
+                        <viewControllerLayoutGuide type="bottom" id="XWG-QS-ldy"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="yFY-w8-qRt" customClass="cr">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s3w-Yq-wFU">
+                                <rect key="frame" x="46" y="128" width="508" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="QCc-Fs-NbA"/>
+                                    <constraint firstAttribute="width" constant="357" id="ZEo-rD-lPh"/>
+                                    <constraint firstAttribute="width" constant="508" id="k0Q-G3-M92"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="ZEo-rD-lPh"/>
+                                    </mask>
+                                </variation>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="centerX" secondItem="s3w-Yq-wFU" secondAttribute="centerX" id="N7Z-qV-lVP"/>
+                            <constraint firstItem="s3w-Yq-wFU" firstAttribute="top" secondItem="NMX-RN-L3U" secondAttribute="bottom" constant="64" id="bwd-MM-tQH"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="creatureName" destination="s3w-Yq-wFU" id="pAw-14-lnO"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="B3F-HZ-3Bh" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2033" y="345"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="sJg-bc-miD">
